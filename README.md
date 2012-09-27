@@ -9,16 +9,16 @@ more information on POSIX signals).
 1. Include in your node program and indicate which loggers to modify when a
    signal is received:
 
-    var sigyan = require('sigyan');
-    sigyan.signal([LOG, backend.log]);
+        var sigyan = require('sigyan');
+        sigyan.signal([LOG, backend.log]);
 
 2. Send SIGUSR1 signal to your running node program to decrease log level:
 
-    kill -s SIGUSR1 <PID>
+        kill -s SIGUSR1 <PID>
 
 3. Send SIGUSR2 signal to your running node program to increase log level:
 
-    kill -s SIGUSR2 <PID>
+        kill -s SIGUSR2 <PID>
 
 
 # LICENSE
