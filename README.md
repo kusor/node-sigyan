@@ -10,7 +10,9 @@ more information on POSIX signals).
    signal is received:
 
         var sigyan = require('sigyan');
-        sigyan.signal([LOG, backend.log]);
+        sigyan.add([LOG, backend.log]);
+
+Note `LOG` and `backend.log` are `bunyan` logger instances here.
 
 2. Send SIGUSR1 signal to your running node program to decrease log level:
 
@@ -19,6 +21,10 @@ more information on POSIX signals).
 3. Send SIGUSR2 signal to your running node program to increase log level:
 
         kill -s SIGUSR2 <PID>
+
+4. You can also pass a single logger instance to `add`:
+
+        sigyan.add(logger);
 
 
 # LICENSE
